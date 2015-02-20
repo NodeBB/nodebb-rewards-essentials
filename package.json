@@ -1,0 +1,25 @@
+{
+  "name": "nodebb-rewards-essentials",
+  "version": "0.0.1",
+  "description": "Essential Rewards Starter Pack for NodeBB",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psychobunny/nodebb-rewards-essentials"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "rewards",
+    "conditions"
+  ],
+  "author": {
+    "name": "psychobunny",
+    "email": "psycho.bunny@hotmail.com"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/psychobunny/nodebb-rewards-essentials/issues"
+  },
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,18 @@
+{
+	"id": "nodebb-rewards-essentials",
+	"name": "Essential Rewards Starter Pack",
+	"description": "This plugin comes with some basic core conditions. Use this as a skeleton to create your own reward packs.",
+	"url": "https://github.com/NodeBB/nodebb-rewards-essentials",
+	"library": "./library.js",
+	"hooks": [
+		{
+			"hook": "static:app.load", "method": "init"
+		}
+	],
+	"staticDirs": {
+		"static": "./static"
+	},
+	"scripts": [
+		"static/lib/main.js"
+	]
+}
