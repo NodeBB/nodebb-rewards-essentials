@@ -6,16 +6,34 @@
 	"library": "./library.js",
 	"hooks": [
 		{
-			"hook": "static:app.load", "method": "init"
+			"hook": "filter:rewards.conditions", "method": "conditions.get"
 		},
 		{
-			"hook": "filter:rewards.conditions", "method": "getConditions"
+			"hook": "filter:rewards.rewards", "method": "rewards.get"
 		},
 		{
-			"hook": "filter:rewards.conditionals", "method": "getConditionals"
+			"hook": "action:rewards.award:core.add-to-group", "method": "rewards.addToGroup"
 		},
 		{
-			"hook": "filter:rewards.rewards", "method": "getRewards"
+			"hook": "action:rewards.award:core.core:alert-user", "method": "rewards.alertUser"
+		},
+		{
+			"hook": "filter:rewards.conditionals", "method": "conditionals.get"
+		},
+		{
+			"hook": "filter:rewards.checkConditional:greaterthan", "method": "conditionals.greaterthan"
+		},
+		{
+			"hook": "filter:rewards.checkConditional:greaterorequalthan", "method": "conditionals.greaterorequalthan"
+		},
+		{
+			"hook": "filter:rewards.checkConditional:lesserthan", "method": "conditionals.lesserthan"
+		},
+		{
+			"hook": "filter:rewards.checkConditional:lesserorequalthan", "method": "conditionals.lesserorequalthan"
+		},
+		{
+			"hook": "filter:rewards.checkConditional:string", "method": "conditionals.string"
 		},
 		{
 			"hook": "action:post.upvote", "method": "onUpvote"

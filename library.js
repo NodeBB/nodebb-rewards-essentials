@@ -1,13 +1,13 @@
 "use strict";
 
 var plugin = {},
-	definitions = require('./lib/definitions'),
 	rewards = module.parent.require('./rewards'),
 	user = module.parent.require('./user');
 
-plugin.getConditions = definitions.getConditions;
-plugin.getConditionals = definitions.getConditionals;
-plugin.getRewards = definitions.getRewards;
+
+plugin.conditions = require('./lib/conditions');
+plugin.conditionals = require('./lib/conditionals');
+plugin.rewards = require('./lib/rewards');
 
 
 
