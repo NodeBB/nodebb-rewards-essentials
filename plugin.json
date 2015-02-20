@@ -37,6 +37,12 @@
 		},
 		{
 			"hook": "action:post.upvote", "method": "onUpvote"
+		},
+		{
+			"hook": "action:user.online", "method": "onOnline"
+		},
+		{
+			"hook": "action:post.save", "method": "onPost"
 		}
 	],
 	"staticDirs": {

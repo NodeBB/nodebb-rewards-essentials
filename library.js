@@ -20,4 +20,21 @@ plugin.onUpvote = function(data) {
 	});
 };
 
+plugin.onOnline = function(data) {
+	var uid = data.uid,
+		lastOnline = data.timestamp;
+
+	rewards.checkConditionAndRewardUser(uid, 'essentials/user.lastonline', function(callback) {
+		callback(false, lastOnline);
+	});
+};
+
+plugin.onPost = function(data) {
+	var uid = data.uid;
+
+	rewards.checkConditionAndRewardUser(uid, 'essentials/user.postcount', function(callback) {
+		user.getUserField(uid, 'postcount', callback);
+	});
+};
+
 module.exports = plugin;
