@@ -12,10 +12,10 @@
 			"hook": "filter:rewards.rewards", "method": "rewards.get"
 		},
 		{
-			"hook": "action:rewards.award:core.add-to-group", "method": "rewards.addToGroup"
+			"hook": "action:rewards.award:essentials/add-to-group", "method": "rewards.addToGroup"
 		},
 		{
-			"hook": "action:rewards.award:core.core:alert-user", "method": "rewards.alertUser"
+			"hook": "action:rewards.award:essentials/alert-user", "method": "rewards.alertUser"
 		},
 		{
 			"hook": "filter:rewards.conditionals", "method": "conditionals.get"
