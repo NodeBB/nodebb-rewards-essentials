@@ -16,6 +16,9 @@
 		},
 		{
 			"hook": "filter:rewards.rewards", "method": "getRewards"
+		},
+		{
+			"hook": "action:post.upvote", "method": "onUpvote"
 		}
 	],
 	"staticDirs": {
