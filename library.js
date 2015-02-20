@@ -23,28 +23,26 @@ plugin.getConditions = function(conditions, callback) {
 
 plugin.getConditionals = function(conditionals, callback) {
 	conditionals = conditionals.concat([
-		[
-			{
-				"name": ">",
-				"conditional": "greaterthan"
-			},
-			{
-				"name": ">=",
-				"conditional": "greaterorequalthan"
-			},
-			{
-				"name": "<",
-				"conditional": "lesserthan"
-			},
-			{
-				"name": "<=",
-				"conditional": "lesserorequalthan"
-			},
-			{
-				"name": "string:",
-				"conditional": "string"
-			}
-		]
+		{
+			"name": ">",
+			"conditional": "greaterthan"
+		},
+		{
+			"name": ">=",
+			"conditional": "greaterorequalthan"
+		},
+		{
+			"name": "<",
+			"conditional": "lesserthan"
+		},
+		{
+			"name": "<=",
+			"conditional": "lesserorequalthan"
+		},
+		{
+			"name": "string:",
+			"conditional": "string"
+		}
 	]);
 
 	callback(false, conditionals);
@@ -94,6 +92,8 @@ plugin.getRewards = function(rewards, callback) {
 			]
 		}
 	]);
+
+	callback(false, rewards);
 };
 
 
