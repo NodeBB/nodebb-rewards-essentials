@@ -7,6 +7,15 @@
 	"hooks": [
 		{
 			"hook": "static:app.load", "method": "init"
+		},
+		{
+			"hook": "filter:rewards.conditions", "method": "getConditions"
+		},
+		{
+			"hook": "filter:rewards.conditionals", "method": "getConditionals"
+		},
+		{
+			"hook": "filter:rewards.rewards", "method": "getRewards"
 		}
 	],
 	"staticDirs": {
