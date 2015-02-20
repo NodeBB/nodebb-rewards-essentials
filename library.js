@@ -13,10 +13,9 @@ plugin.rewards = require('./lib/rewards');
 
 
 plugin.onUpvote = function(data) {
-	var uid = data.uid;
+	var uid = data.owner;
 
-
-	rewards.checkConditionAndRewardUser(uid, 'core:user.reputation', function(callback) {
+	rewards.checkConditionAndRewardUser(uid, 'essentials/user.reputation', function(callback) {
 		user.getUserField(uid, 'reputation', callback);
 	});
 };
