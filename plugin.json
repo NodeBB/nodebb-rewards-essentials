@@ -50,8 +50,5 @@
 	},
 	"scripts": [
 		"static/lib/main.js"
-	],
-	"nbbpm": {
-		"compatibility": "^0.7.0"
-	}
+	]
 }
