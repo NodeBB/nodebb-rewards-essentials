@@ -18,6 +18,9 @@
 			"hook": "action:rewards.award:essentials/alert-user", "method": "rewards.alertUser"
 		},
 		{
+			"hook": "action:rewards.award:essentials/award-reputation", "method": "rewards.awardReputation"
+		},
+		{
 			"hook": "filter:rewards.conditionals", "method": "conditionals.get"
 		},
 		{
