@@ -30,7 +30,7 @@ plugin.onOnline = function(data) {
 };
 
 plugin.onPost = function(data) {
-	var uid = data.uid;
+	var uid = data.post.uid;
 
 	rewards.checkConditionAndRewardUser(uid, 'essentials/user.postcount', function(callback) {
 		user.getUserField(uid, 'postcount', callback);
