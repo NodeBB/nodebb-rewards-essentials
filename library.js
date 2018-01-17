@@ -1,38 +1,35 @@
-"use strict";
+'use strict';
 
-var plugin = {},
-	rewards = module.parent.require('./rewards'),
-	user = module.parent.require('./user');
+var plugin = {};
+var rewards = module.parent.require('./rewards');
+var user = module.parent.require('./user');
 
 
 plugin.conditions = require('./lib/conditions');
 plugin.conditionals = require('./lib/conditionals');
 plugin.rewards = require('./lib/rewards');
 
-
-
-
-plugin.onUpvote = function(data) {
+plugin.onUpvote = function (data) {
 	var uid = data.owner;
 
-	rewards.checkConditionAndRewardUser(uid, 'essentials/user.reputation', function(callback) {
+	rewards.checkConditionAndRewardUser(uid, 'essentials/user.reputation', function (callback) {
 		user.getUserField(uid, 'reputation', callback);
 	});
 };
 
-plugin.onOnline = function(data) {
-	var uid = data.uid,
-		lastOnline = data.timestamp;
+plugin.onOnline = function (data) {
+	var uid = data.uid;
+	var lastOnline = data.timestamp;
 
-	rewards.checkConditionAndRewardUser(uid, 'essentials/user.lastonline', function(callback) {
+	rewards.checkConditionAndRewardUser(uid, 'essentials/user.lastonline', function (callback) {
 		callback(false, lastOnline);
 	});
 };
 
-plugin.onPost = function(data) {
+plugin.onPost = function (data) {
 	var uid = data.post.uid;
 
-	rewards.checkConditionAndRewardUser(uid, 'essentials/user.postcount', function(callback) {
+	rewards.checkConditionAndRewardUser(uid, 'essentials/user.postcount', function (callback) {
 		user.getUserField(uid, 'postcount', callback);
 	});
 };
