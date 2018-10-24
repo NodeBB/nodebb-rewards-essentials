@@ -1,8 +1,8 @@
 'use strict';
 
 var plugin = {};
-var rewards = module.parent.require('./rewards');
-var user = module.parent.require('./user');
+var rewards = require.main.require('./src/rewards');
+var user = require.main.require('./src/user');
 
 
 plugin.conditions = require('./lib/conditions');
