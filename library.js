@@ -1,8 +1,10 @@
 'use strict';
 
+var nbbRequire = require('./lib/nbbRequire');
+
 var plugin = {};
-var rewards = require.main.require('./src/rewards');
-var user = require.main.require('./src/user');
+var rewards = nbbRequire('./src/rewards');
+var user = nbbRequire('./src/user');
 
 
 plugin.conditions = require('./lib/conditions');
