@@ -22,7 +22,7 @@ plugin.onOnline = function (data) {
 	var lastOnline = data.timestamp;
 
 	rewards.checkConditionAndRewardUser(uid, 'essentials/user.lastonline', function (callback) {
-		callback(false, lastOnline);
+		callback(null, lastOnline);
 	});
 };
 
