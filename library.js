@@ -15,7 +15,6 @@ plugin.onUpvote = function (data) {
 		uid: uid,
 		condition: 'essentials/user.reputation',
 		method: function (callback) {
-			console.log('no crash?', callback);
 			user.getUserField(uid, 'reputation', callback);
 		},
 	});
