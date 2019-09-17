@@ -15,8 +15,8 @@
 			"hook": "action:rewards.award:essentials/add-to-group", "method": "rewards.addToGroup"
 		},
 		{
-                        "hook": "action:rewards.award:essentials/remove-from-group", "method": "rewards.removeFromGroup"
-                },
+            "hook": "action:rewards.award:essentials/remove-from-group", "method": "rewards.removeFromGroup"
+        },
 		{
 			"hook": "action:rewards.award:essentials/alert-user", "method": "rewards.alertUser"
 		},

@@ -11,9 +11,13 @@ plugin.rewards = require('./lib/rewards');
 
 plugin.onUpvote = function (data) {
 	var uid = data.owner;
-
-	rewards.checkConditionAndRewardUser(uid, 'essentials/user.reputation', function (callback) {
-		user.getUserField(uid, 'reputation', callback);
+	rewards.checkConditionAndRewardUser({
+		uid: uid,
+		condition: 'essentials/user.reputation',
+		method: function (callback) {
+			console.log('no crash?', callback);
+			user.getUserField(uid, 'reputation', callback);
+		},
 	});
 };
 
@@ -21,16 +25,24 @@ plugin.onOnline = function (data) {
 	var uid = data.uid;
 	var lastOnline = data.timestamp;
 
-	rewards.checkConditionAndRewardUser(uid, 'essentials/user.lastonline', function (callback) {
-		callback(null, lastOnline);
+	rewards.checkConditionAndRewardUser({
+		uid: uid,
+		condition: 'essentials/user.lastonline',
+		method: function (callback) {
+			callback(null, lastOnline);
+		},
 	});
 };
 
 plugin.onPost = function (data) {
 	var uid = data.post.uid;
 
-	rewards.checkConditionAndRewardUser(uid, 'essentials/user.postcount', function (callback) {
-		user.getUserField(uid, 'postcount', callback);
+	rewards.checkConditionAndRewardUser({
+		uid: uid,
+		condition: 'essentials/user.postcount',
+		method: function (callback) {
+			user.getUserField(uid, 'postcount', callback);
+		},
 	});
 };
 
