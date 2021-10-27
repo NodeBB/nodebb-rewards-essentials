@@ -24,5 +24,10 @@
   "readmeFilename": "README.md",
   "nbbpm": {
     "compatibility": "^1.13.3"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-nodebb": "^0.0.2",
+    "eslint-plugin-import": "^2.24.2"
   }
 }

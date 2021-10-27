@@ -1,16 +1,17 @@
 'use strict';
 
-var plugin = {};
-var rewards = require.main.require('./src/rewards');
-var user = require.main.require('./src/user');
 
+const rewards = require.main.require('./src/rewards');
+const user = require.main.require('./src/user');
+
+const plugin = module.exports;
 
 plugin.conditions = require('./lib/conditions');
 plugin.conditionals = require('./lib/conditionals');
 plugin.rewards = require('./lib/rewards');
 
 plugin.onUpvote = function (data) {
-	var uid = data.owner;
+	const uid = data.owner;
 	rewards.checkConditionAndRewardUser({
 		uid: uid,
 		condition: 'essentials/user.reputation',
@@ -21,8 +22,8 @@ plugin.onUpvote = function (data) {
 };
 
 plugin.onOnline = function (data) {
-	var uid = data.uid;
-	var lastOnline = data.timestamp;
+	const { uid } = data;
+	const lastOnline = data.timestamp;
 
 	rewards.checkConditionAndRewardUser({
 		uid: uid,
@@ -31,10 +32,27 @@ plugin.onOnline = function (data) {
 			callback(null, lastOnline);
 		},
 	});
+
+	rewards.checkConditionAndRewardUser({
+		uid: uid,
+		condition: 'essentials/user.joindate',
+		method: function (callback) {
+			user.getUserField(uid, 'joindate', callback);
+		},
+	});
+
+	rewards.checkConditionAndRewardUser({
+		uid: uid,
+		condition: 'essentials/user.daysregistered',
+		method: async function () {
+			const joindate = await user.getUserField(uid, 'joindate');
+			return (Date.now() - joindate) / (1000 * 60 * 60 * 24);
+		},
+	});
 };
 
 plugin.onPost = function (data) {
-	var uid = data.post.uid;
+	const { uid } = data.post;
 
 	rewards.checkConditionAndRewardUser({
 		uid: uid,
@@ -45,4 +63,3 @@ plugin.onPost = function (data) {
 	});
 };
 
-module.exports = plugin;
