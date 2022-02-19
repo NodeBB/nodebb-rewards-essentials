@@ -50,11 +50,5 @@
 		{
 			"hook": "action:post.save", "method": "onPost"
 		}
-	],
-	"staticDirs": {
-		"static": "./static"
-	},
-	"scripts": [
-		"static/lib/main.js"
 	]
 }
