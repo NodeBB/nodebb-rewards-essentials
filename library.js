@@ -33,6 +33,16 @@ plugin.onOnline = function (data) {
 		},
 	});
 
+	checkDaysRegistered(uid);
+	checkJoindate(uid);
+};
+
+plugin.onUserCreate = function (data) {
+	checkDaysRegistered(data.user.uid);
+	checkJoindate(data.user.uid);
+};
+
+function checkJoindate(uid) {
 	rewards.checkConditionAndRewardUser({
 		uid: uid,
 		condition: 'essentials/user.joindate',
@@ -40,7 +50,9 @@ plugin.onOnline = function (data) {
 			user.getUserField(uid, 'joindate', callback);
 		},
 	});
+}
 
+function checkDaysRegistered(uid) {
 	rewards.checkConditionAndRewardUser({
 		uid: uid,
 		condition: 'essentials/user.daysregistered',
@@ -49,7 +61,7 @@ plugin.onOnline = function (data) {
 			return (Date.now() - joindate) / (1000 * 60 * 60 * 24);
 		},
 	});
-};
+}
 
 plugin.onPost = function (data) {
 	const { uid } = data.post;

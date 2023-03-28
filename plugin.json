@@ -49,6 +49,9 @@
 		},
 		{
 			"hook": "action:post.save", "method": "onPost"
+		},
+		{
+			"hook": "action:user.create", "method": "onUserCreate"
 		}
 	]
 }
