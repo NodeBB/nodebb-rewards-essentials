@@ -23,7 +23,7 @@
   },
   "readmeFilename": "README.md",
   "nbbpm": {
-    "compatibility": "^1.13.3"
+    "compatibility": "^3.5.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",
