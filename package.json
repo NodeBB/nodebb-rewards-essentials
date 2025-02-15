@@ -1,6 +1,6 @@
 {
   "name": "nodebb-rewards-essentials",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Essential Rewards Starter Pack for NodeBB",
   "main": "library.js",
   "repository": {
