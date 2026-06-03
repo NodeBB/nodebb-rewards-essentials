@@ -1,8 +1,8 @@
 'use strict';
 
 
-const rewards = require.main.require('./src/rewards');
-const user = require.main.require('./src/user');
+const rewards = nodebb.require('./src/rewards');
+const user = nodebb.require('./src/user');
 
 const plugin = module.exports;
 
